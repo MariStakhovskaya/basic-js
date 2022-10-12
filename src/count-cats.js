@@ -16,10 +16,10 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function countCats(matrix ) {
   const newArr = matrix.flat()
-  let filtered = newArr.filter(function(cat){
+  return newArr.filter(function(cat){
     return cat === "^^"
   } ).length
-return  filtered
+
 }
 
 module.exports = {
