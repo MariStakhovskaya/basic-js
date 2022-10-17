@@ -12,10 +12,12 @@ const { NotImplementedError } = require('../extensions/index.js');
  * @example
  * 
  * calculateHanoi(9, 4308) => { turns: 511, seconds: 427 }
- *
+ * 2**n -1
  */
 function calculateHanoi(disksNumber, turnsSpeed ) {
-
+ let count = (2**disksNumber-1)
+  let time = Math.floor(count / turnsSpeed * 3600);
+ return {turns: count, seconds: time}
 }
 
 module.exports = {
