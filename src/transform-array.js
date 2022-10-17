@@ -11,14 +11,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  * transform([1, 2, 3, '--double-next', 4, 5]) => [1, 2, 3, 4, 4, 5]
  * transform([1, 2, 3, '--discard-prev', 4, 5]) => [1, 2, 4, 5]
- *  try {
-        if (arr instanceof Array) {}
-
-    } catch (e) {
-        throw new Error('\'arr\' parameter must be an instance of the Array!')
-    }
- if (!Array.isArray(newArr) ) {
-    throw new Error('\'arr\' parameter must be an instance of the Array!')
+ *
  */
 function transform(arr ) {
     let newArr = [...arr]
