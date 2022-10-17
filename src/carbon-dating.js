@@ -15,10 +15,19 @@ const HALF_LIFE_PERIOD = 5730;
  * 
  * dateSample('1') => 22387
  * dateSample('WOOT!') => false
- *
+ * t= ln(No/N) / k
  */
-function dateSample(/* sampleActivity */) {
+function dateSample(sampleActivity ) {
+if (typeof sampleActivity !== "string") return false
+  if (sampleActivity === '' || sampleActivity === ' ') return false
+  if (+sampleActivity > MODERN_ACTIVITY) return false
+  if ( +sampleActivity <= 0) return false
+  if (isNaN(sampleActivity)) return false
 
+  let t = Math.log(MODERN_ACTIVITY/+sampleActivity)/(0.693 / HALF_LIFE_PERIOD)
+
+
+  return Math.ceil(t)
 }
 
 module.exports = {

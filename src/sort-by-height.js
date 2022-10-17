@@ -16,13 +16,13 @@ function sortByHeight( arr ) {
   for (let i = 0; i< arr.length; i++){
    if(arr[i] === -1){
      arrInd.push(i)
-     console.log(arrInd)
+
     }
   }
   let filteredArr =arr.filter(el => el !==-1)
-  console.log(filteredArr)
+
   let sortArr = filteredArr.sort((a,b) => a-b)
-  console.log(sortArr)
+
   for (let i=0; i< arrInd.length; i++){
     sortArr.splice(arrInd[i], 0, -1)
   }
